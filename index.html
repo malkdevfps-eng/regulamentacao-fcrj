@@ -1,1 +1,989 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Staff Factual RJ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+/* Visual único e escuro, no estilo do painel do jogo: janelas pretas com acabamento roxo, botões cinza com relevo e cabeçalhos em caixa alta pesada. Layout: navegação em painel à esquerda, uma janela por seção à direita. */
+:root{
+  color-scheme:dark;
+  --bg:#08060D;
+  --panel:#15121C;
+  --inset:#0F0C16;
+  --raise:#1F1A2B;
+  --line:rgba(255,255,255,.09);
+  --line-2:rgba(255,255,255,.16);
+  --text:#F4F1FA;
+  --soft:#D6CFE4;
+  --muted:#A39BB4;
+  --violet:#9B3DF2;
+  --violet-2:#7424C6;
+  --violet-3:#C795FB;
+  --glow:rgba(155,61,242,.42);
+  --green:#3DDC84;
+  --red:#F2495B;
+  --orange:#FF9A3D;
+  --gold:#F2C14E;
+  --font-display:'Montserrat','Segoe UI',system-ui,sans-serif;
+  --font-body:'Figtree','Segoe UI',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:20px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;color:var(--text);font:500 1rem/1.65 var(--font-body);-webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(820px 620px at 92% 0,rgba(155,61,242,.30),transparent 62%),
+    radial-gradient(760px 640px at -8% 1300px,rgba(110,40,200,.24),transparent 62%),
+    radial-gradient(820px 640px at 104% 2900px,rgba(155,61,242,.22),transparent 62%),
+    var(--bg);
+  background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:40}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0;text-wrap:balance}
+p{margin:0}
+ul,ol{margin:0;padding:0;list-style:none}
+code{font-family:var(--font-mono);font-size:.86em;background:rgba(155,61,242,.16);color:#E8D7FF;padding:.12em .45em;border-radius:6px;overflow-wrap:anywhere}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--violet-3);outline-offset:2px;border-radius:6px}
+.gut{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.cap{font:800 .7rem/1.3 var(--font-display);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.cap i{font-style:normal;opacity:.55;margin:0 .5em}
 
+/* Botões com relevo, como no painel do jogo */
+.btn,.navbtn,.mini{font-family:var(--font-display);font-weight:900;text-transform:uppercase;letter-spacing:.03em;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.45);border:1px solid #6A6772;background:linear-gradient(#5A5862,#46444E);box-shadow:inset 0 1px 0 rgba(255,255,255,.22),0 3px 0 #1D1B24,0 10px 20px -8px rgba(0,0,0,.6);cursor:pointer;text-decoration:none;transition:transform .08s,filter .15s}
+.btn:hover,.navbtn:hover,.mini:hover{filter:brightness(1.12)}
+.btn:active,.navbtn:active,.mini:active{transform:translateY(2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 1px 0 #1D1B24}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-size:.9rem;line-height:1;padding:16px 24px;border-radius:13px}
+.btn.pri{border-color:#C795FB;background:linear-gradient(#A850F6,#7424C6);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 3px 0 #3F1280,0 12px 30px -6px var(--glow)}
+.mini{font-size:.7rem;line-height:1;padding:8px 13px;border-radius:9px;flex:none;box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 2px 0 #1D1B24}
+.mini.ok{border-color:#6CF0A8;background:linear-gradient(#34B873,#1F8A55)}
+.navbtn{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-size:.8rem;line-height:1.1;padding:12px 14px;border-radius:11px;box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 2px 0 #1D1B24}
+.navbtn.l{justify-content:flex-start;text-align:left}
+.navbtn b{font:700 .7rem var(--font-mono);color:#E0C8FF;background:rgba(0,0,0,.28);border-radius:6px;padding:3px 7px;text-shadow:none;flex:none}
+.navbtn[aria-current="true"],.navbtn[aria-selected="true"]{border-color:var(--violet);box-shadow:0 0 0 2px rgba(155,61,242,.55),inset 0 1px 0 rgba(255,255,255,.16),0 2px 0 #1D1B24}
+.navbtn[aria-current="true"]::before,.navbtn[aria-selected="true"]::before{content:"";position:absolute;left:-10px;top:20%;bottom:20%;width:4px;border-radius:3px;background:var(--violet)}
+
+/* Casca */
+.shell{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:240px minmax(0,1fr);gap:40px;padding-block:32px 40px}
+main{min-width:0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:0}
+.mark{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:none;color:#fff;background:linear-gradient(#A850F6,#6C20BC);box-shadow:0 8px 24px -8px var(--glow)}
+.mark svg{width:24px;height:24px}
+.brand b{display:block;font:900 1.02rem/1.05 var(--font-display);letter-spacing:.02em;text-transform:uppercase}
+.brand small{display:block;font:700 .64rem var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 24px);align-self:start;display:flex;flex-direction:column;gap:18px;max-height:calc(100vh - 48px);overflow:auto;scrollbar-width:none}
+.side::-webkit-scrollbar{display:none}
+.navpanel{background:var(--panel);border:1px solid var(--line-2);border-radius:18px;padding:16px 16px 18px 20px;display:flex;flex-direction:column;gap:11px}
+.kbox{background:var(--inset);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+.kbox pre{margin:0;font:500 .72rem/1.65 var(--font-mono);color:var(--soft);white-space:pre-wrap}
+.kbox .cap{color:var(--violet-3)}
+.lock{font-size:.78rem;color:var(--muted);padding:0 4px}
+.topbar{display:none;position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(8,6,13,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{padding-block:10px 0}
+.chips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:10px 0 12px}
+.chips::-webkit-scrollbar{display:none}
+.chips a{flex:none;width:auto;padding:9px 14px;font-size:.72rem}
+.chips a::before{display:none!important}
+
+.sec{margin-top:80px;scroll-margin-top:20px}
+.sec:first-child{margin-top:0}
+
+/* Janelas */
+.win{position:relative;background:linear-gradient(180deg,#181420 0%,#110E18 100%);border:1px solid var(--line-2);border-radius:24px;overflow:hidden;box-shadow:0 40px 90px -50px #000}
+.win-head{position:relative;display:flex;align-items:center;gap:16px;padding:22px clamp(18px,3vw,32px);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(155,61,242,.2),transparent 70%)}
+.win-head::after{content:"";position:absolute;top:0;right:0;bottom:0;width:52%;opacity:.055;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='110' viewBox='0 0 140 110'%3E%3Cg fill='white' transform='translate(30 10) rotate(35 20 30)'%3E%3Crect x='2' y='0' width='36' height='15' rx='4'/%3E%3Crect x='16' y='13' width='8' height='38' rx='3'/%3E%3C/g%3E%3Cg fill='white' transform='translate(100 55) rotate(-30 15 20) scale(.7)'%3E%3Crect x='2' y='0' width='36' height='15' rx='4'/%3E%3Crect x='16' y='13' width='8' height='38' rx='3'/%3E%3C/g%3E%3C/svg%3E");
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 60%);mask-image:linear-gradient(90deg,transparent,#000 60%)}
+.win-ico{position:relative;z-index:1;flex:none;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;color:#fff;background:linear-gradient(#A850F6,#6C20BC);box-shadow:0 8px 24px -8px var(--glow)}
+.win-ico svg{width:26px;height:26px}
+.win-head>div{position:relative;z-index:1;min-width:0}
+.win-head h2{font-weight:900;font-size:clamp(1.25rem,1rem + 1.4vw,1.8rem);line-height:1;text-transform:uppercase;text-shadow:0 2px 0 rgba(0,0,0,.5)}
+.win-head .cap{margin-top:7px}
+.win-body{padding:clamp(16px,3vw,30px);display:grid;gap:22px}
+.lead{color:var(--soft);font-size:1.02rem;max-width:70ch}
+.inset{background:var(--inset);border:1px solid var(--line);border-radius:18px;padding:clamp(16px,2.4vw,26px);display:grid;gap:18px;min-width:0;align-content:start}
+.inset>h3{font:800 1.1rem var(--font-display);text-transform:uppercase;letter-spacing:.01em}
+.raise{background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:16px 18px;min-width:0}
+.fit{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+
+/* Início */
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:clamp(24px,4vw,56px);align-items:center;padding:clamp(20px,4vw,44px);border-radius:28px;border:1px solid var(--line-2);overflow:hidden;
+  background:radial-gradient(620px 400px at 100% 0,rgba(155,61,242,.5),transparent 65%),linear-gradient(135deg,#21103A 0%,#0F0A18 58%,#09070F 100%)}
+.hero-copy{display:flex;flex-direction:column;gap:22px;align-items:flex-start;min-width:0}
+.pill{display:inline-flex;align-items:center;gap:8px;font:800 .68rem var(--font-display);letter-spacing:.1em;text-transform:uppercase;color:#E4CBFF;background:rgba(155,61,242,.22);border:1px solid rgba(199,149,251,.45);padding:8px 14px;border-radius:99px}
+.hero h1{font-weight:900;font-size:clamp(2.5rem,1.2rem + 5.4vw,4.8rem);line-height:.95;text-transform:uppercase;letter-spacing:-.01em;text-shadow:0 3px 0 rgba(0,0,0,.4)}
+.hero h1 span{background:linear-gradient(90deg,#fff,#C795FB 70%,#9B3DF2);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;display:block}
+.hero .lead{max-width:46ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-fig{margin:0;order:2;border-radius:22px;overflow:hidden;border:1px solid var(--line-2);aspect-ratio:1/1;max-width:100%;box-shadow:0 0 0 7px rgba(155,61,242,.14),0 40px 90px -24px rgba(155,61,242,.65)}
+.hero-fig img{display:block;width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.quick{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.q{display:flex;flex-direction:column;gap:8px;padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:18px;text-decoration:none;transition:border-color .15s,transform .15s}
+.q:hover{border-color:rgba(199,149,251,.55);transform:translateY(-2px)}
+.q .cap{display:flex;align-items:center;gap:8px;color:var(--violet-3)}
+.q .cap::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--violet);box-shadow:0 0 10px var(--violet)}
+.q span:last-child{color:var(--soft);font-size:.95rem}
+
+/* Modo discreto */
+.statement{border-radius:20px;padding:clamp(20px,3.4vw,36px);display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(20px,3vw,36px);align-items:center;border:1px solid rgba(199,149,251,.4);
+  background:radial-gradient(520px 280px at 100% 0,rgba(199,149,251,.4),transparent 70%),linear-gradient(135deg,#4B1C8E,#231046 72%)}
+.statement h3{font-weight:900;font-size:clamp(1.45rem,1rem + 1.8vw,2.3rem);line-height:1.08;margin-bottom:12px;text-shadow:0 2px 0 rgba(0,0,0,.35)}
+.statement p{color:#EADFFB;max-width:52ch}
+.esp{background:rgba(6,3,12,.5);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.esp .cap{color:var(--violet-3)}
+.esp code{display:block;font-size:1.05rem;padding:12px 14px;background:rgba(0,0,0,.4);color:#fff}
+.esp p{font-size:.92rem}
+.esp .mini{align-self:flex-start}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pillar{display:flex;flex-direction:column;gap:10px;background:var(--raise);border:1px solid var(--line);border-radius:16px;padding:20px}
+.pillar .cap{color:var(--violet-3)}
+.pillar h4{font:800 1.12rem/1.2 var(--font-display)}
+.pillar p{color:var(--soft);font-size:.95rem}
+.dd{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.dd h4{font:800 .92rem var(--font-display);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.dd li{display:flex;gap:12px;align-items:flex-start;color:var(--soft);font-size:.96rem}
+.dd li::before{content:"\2713";flex:none;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font:900 .65rem var(--font-display);margin-top:2px;background:var(--green);color:#06301A}
+.dd .no li::before{content:"\2715";background:var(--red);color:#3C0710}
+.dd ul{display:grid;gap:11px}
+.note{color:var(--muted);font-size:.9rem}
+
+/* Fundamentos */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;flex-direction:column;gap:8px;background:var(--raise);border:1px solid var(--line);border-radius:14px;padding:16px}
+.steps li::before{content:counter(s);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 .85rem var(--font-mono);background:linear-gradient(#A850F6,#7424C6);color:#fff}
+.steps b{font:800 .98rem/1.2 var(--font-display)}
+.steps span{color:var(--soft);font-size:.9rem}
+.role h4,.term dt{font:800 1rem/1.25 var(--font-display);margin-bottom:6px}
+.role p,.term dd{color:var(--soft);font-size:.94rem;margin:0}
+.term dd code{font-size:.8em}
+
+/* Dois painéis: navegação à esquerda, conteúdo à direita */
+.pane{display:grid;grid-template-columns:230px minmax(0,1fr);gap:18px;align-items:start}
+.pane-nav{display:flex;flex-direction:column;gap:11px;background:var(--inset);border:1px solid var(--line);border-radius:18px;padding:14px 14px 16px 20px}
+.pane-main{min-width:0;display:grid;gap:16px}
+.pane-title{display:grid;gap:6px}
+.pane-title h3{font:900 1.35rem/1.15 var(--font-display);text-transform:uppercase}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:14px}
+.rule{background:var(--raise);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.rule h4{font:800 1rem/1.25 var(--font-display);display:flex;gap:10px;align-items:center}
+.rid{flex:none;font:700 .72rem var(--font-mono);color:var(--violet-3);background:rgba(155,61,242,.2);border:1px solid rgba(155,61,242,.5);border-radius:7px;padding:3px 8px}
+.rule li{position:relative;padding-left:18px;color:var(--soft);font-size:.95rem}
+.rule>ul>li+li{margin-top:9px}
+.rule li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:2px;background:var(--violet)}
+.rule li ol{margin-top:9px;counter-reset:o}
+.rule li ol li{counter-increment:o;padding-left:26px}
+.rule li ol li+li{margin-top:7px}
+.rule li ol li::before{content:counter(o) ".";background:none;width:auto;height:auto;top:0;left:0;font:700 .8rem var(--font-mono);color:var(--violet-3)}
+.rule strong{font-weight:700;color:#fff}
+.rule p{color:var(--soft);font-size:.95rem}
+.final{border-radius:20px;padding:clamp(20px,3vw,30px);display:grid;gap:10px;border:1px solid rgba(199,149,251,.4);background:radial-gradient(520px 260px at 100% 0,rgba(199,149,251,.32),transparent 70%),linear-gradient(135deg,#3E1778,#1C0E38 75%)}
+.final h3{font:900 1.2rem var(--font-display);text-transform:uppercase}
+.final p{color:#EADFFB;max-width:70ch}
+
+/* Painel do jogo (ilustração) */
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.how .raise{display:grid;gap:6px}
+.how b{font:800 .98rem var(--font-display)}
+.how span{color:var(--soft);font-size:.92rem}
+.how kbd{font:700 .8rem var(--font-mono);background:#3A3842;border:1px solid #6A6772;border-bottom-width:3px;border-radius:6px;padding:1px 8px;color:#fff}
+.game{border-radius:22px;padding:clamp(10px,2.6vw,26px);border:1px solid var(--line);background:radial-gradient(520px 320px at 20% 0,#3B3E46,transparent 70%),linear-gradient(160deg,#2A2C32,#141518)}
+.gp{background:#2C2C2F;border:2px solid #4A4A50;border-radius:18px;padding:clamp(12px,2.2vw,24px);box-shadow:0 30px 60px -30px #000;color:#fff}
+.gp,.gp button,.gp input{font-family:var(--font-display)}
+.gp-head{display:flex;align-items:center;justify-content:space-between;gap:12px 16px;flex-wrap:wrap;margin-bottom:16px}
+.gp-title{display:flex;align-items:center;gap:14px;min-width:0}
+.gp-title>svg{width:42px;height:42px;flex:none}
+.gp-title h3{font-weight:900;font-size:clamp(1rem,.8rem + 1.2vw,1.55rem);line-height:1.05;text-transform:uppercase;text-shadow:0 2px 0 rgba(0,0,0,.5)}
+.gp-title small{display:block;margin-top:5px;font:600 .64rem/1.25 var(--font-display);letter-spacing:.05em;text-transform:uppercase;color:#CFCFD4}
+.gp-actions{display:flex;gap:10px}
+.gp-btn{font-weight:900;text-transform:uppercase;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.5);cursor:pointer;padding:11px 16px;font-size:clamp(.7rem,.6rem + .5vw,.92rem);line-height:1;border-radius:11px;border:2px solid #5C5C62;background:linear-gradient(#5C5C62,#47474C);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 2px 0 #1A1A1D}
+.gp-btn:hover{filter:brightness(1.1)}
+.gp-btn.on{border-color:#3FD98A}
+.gp-btn.off{border-color:#F2495B}
+.gp-body{display:grid;grid-template-columns:minmax(0,210px) minmax(0,1fr);gap:14px}
+.gp-nav,.gp-main{background:#1D1D20;border:2px solid #404046;border-radius:14px;padding:14px;min-width:0}
+.gp-nav{display:flex;flex-direction:column;gap:10px;align-content:start;padding-left:20px}
+.gp-main{display:grid;gap:12px;align-content:start;min-height:420px}
+.gp-cap{font:700 .66rem/1.3 var(--font-display);letter-spacing:.06em;text-transform:uppercase;color:#CFCFD4;display:flex;justify-content:space-between;gap:10px}
+.gp-tab{position:relative;width:100%;font-weight:900;text-transform:uppercase;font-size:.85rem;line-height:1;padding:13px 10px;border-radius:11px;color:#fff;text-shadow:0 2px 0 rgba(0,0,0,.5);cursor:pointer;border:2px solid #5C5C62;background:linear-gradient(#5C5C62,#47474C);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 2px 0 #1A1A1D}
+.gp-tab[aria-selected="true"]{border-color:#9B3DF2}
+.gp-tab[aria-selected="true"]::before{content:"";position:absolute;left:-12px;top:22%;bottom:22%;width:4px;border-radius:3px;background:#9B3DF2}
+.gp-kbox{background:#252528;border-radius:10px;padding:12px;font:500 .66rem/1.55 var(--font-mono);color:#CFCFD4;white-space:pre-line}
+.gp-kbox b{display:block;font:800 .66rem var(--font-display);letter-spacing:.05em;color:#A850F6;margin-bottom:6px;text-transform:uppercase}
+.gp-user{display:flex;gap:10px;align-items:center;background:#252528;border:2px solid #404046;border-radius:12px;padding:10px;min-width:0}
+.gp-user b{display:block;font:800 .78rem var(--font-display);overflow-wrap:anywhere}
+.gp-av{width:42px;height:42px;border-radius:50%;border:2px solid #F2C14E;display:grid;place-items:center;background:#33333A;font:900 .8rem var(--font-display);flex:none}
+.gp-badge{display:inline-block;margin-top:3px;font:800 .6rem var(--font-display);text-transform:uppercase;padding:3px 10px;border-radius:99px;border:1px solid #F2C14E;color:#F2C14E;background:rgba(242,193,78,.12)}
+.gp-badge.adm{border-color:#C795FB;color:#C795FB;background:rgba(155,61,242,.16)}
+.gp-input{width:100%;padding:13px 16px;border-radius:12px;border:2px solid #3F3F45;background:#2A2A2E;color:#fff;font-weight:700;font-size:.9rem;min-width:0}
+.gp-input::placeholder{color:#8D8D95}
+.gp-input:focus-visible{border-color:#9B3DF2;outline:none}
+.gp-row{display:flex;gap:10px}
+.gp-row .gp-input{flex:1}
+.gp-result{display:flex;align-items:center;gap:14px;background:#161618;border:2px solid #3A3A40;border-radius:12px;padding:12px 14px;min-width:0}
+.gp-av2{width:46px;height:46px;border-radius:50%;background:#2E2E34;border:2px solid #44444B;display:grid;place-items:center;flex:none;color:#CFCFD4}
+.gp-av2 svg{width:22px;height:22px}
+.gp-result b{display:block;font:800 .9rem var(--font-display);text-transform:uppercase;overflow-wrap:anywhere}
+.gp-result span{font:600 .74rem/1.35 var(--font-display);color:#B9B9C1}
+.gp-types{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.gp-type{position:relative;text-align:left;border:2px solid #3F3F45;background:#161618;border-radius:12px;padding:12px 12px 12px 22px;cursor:pointer;color:#fff;min-width:0}
+.gp-type::before{content:"";position:absolute;left:10px;top:14px;bottom:14px;width:3px;border-radius:2px;background:var(--tc)}
+.gp-type b{display:block;font:900 .78rem var(--font-display);text-transform:uppercase;color:var(--tc);padding-right:18px}
+.gp-type span{display:block;margin-top:5px;font:600 .68rem/1.35 var(--font-display);color:#CFCFD4}
+.gp-type i{position:absolute;right:10px;top:11px;width:15px;height:15px;border-radius:50%;border:2px solid var(--tc)}
+.gp-type[aria-checked="true"]{border-color:var(--tc);background:color-mix(in srgb,var(--tc) 14%,#161618)}
+.gp-type[aria-checked="true"] i{background:var(--tc)}
+.gp-chips{display:flex;flex-wrap:wrap;gap:8px}
+.gp-chips button{cursor:pointer;border:2px solid #44444B;background:#232326;color:#fff;font-weight:800;font-size:.7rem;text-transform:uppercase;padding:8px 14px;border-radius:99px}
+.gp-chips button:hover{border-color:#9B3DF2}
+.gp-apply{width:100%;padding:16px;font-size:.95rem;margin-top:4px}
+.gp-list{display:grid;gap:10px}
+.gp-ban{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;background:#161618;border:2px solid #3A3A40;border-radius:12px;padding:12px 14px 12px 20px}
+.gp-ban::before{content:"";position:absolute;left:8px;top:14px;bottom:14px;width:3px;border-radius:2px;background:#9B3DF2}
+.gp-ban .av{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font:900 .95rem var(--font-display);border:2px solid #44444B;background:linear-gradient(135deg,#7A26CC,#2A2A30)}
+.gp-ban b{display:block;font:800 .95rem var(--font-display);overflow-wrap:anywhere}
+.gp-meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font:600 .72rem var(--font-display);color:#CFCFD4}
+.gp-pill{font:800 .62rem var(--font-display);text-transform:uppercase;padding:3px 10px;border-radius:99px;border:1px solid var(--tc);color:var(--tc);background:color-mix(in srgb,var(--tc) 16%,transparent)}
+.gp-why{font:600 .72rem var(--font-display);color:#9E9EA6;display:block;margin-top:2px}
+.gp-empty{text-align:center;color:#B9B9C1;font:700 .85rem var(--font-display);padding:34px 10px}
+.gp-toast-note{font:600 .66rem var(--font-display);color:#8D8D95}
+.game-cap{margin-top:12px;text-align:center}
+
+/* Comandos */
+.warnbar{display:flex;gap:12px;align-items:flex-start;background:rgba(242,73,91,.1);border:1px solid rgba(242,73,91,.4);border-radius:14px;padding:14px 18px;color:var(--soft);font-size:.95rem}
+.warnbar b{color:#FF9AA5;font-family:var(--font-display);text-transform:uppercase;font-size:.78rem;letter-spacing:.06em;flex:none;margin-top:2px}
+.search{position:relative}
+.search input{width:100%;min-height:48px;padding:12px 16px 12px 44px;border-radius:13px;border:1px solid var(--line-2);background:var(--inset);font-size:1rem}
+.search input::placeholder{color:var(--muted)}
+.search input:focus-visible{border-color:var(--violet);outline:none;box-shadow:0 0 0 3px rgba(155,61,242,.3)}
+.search svg{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted)}
+.cgroup+.cgroup{margin-top:26px}
+.cg-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-bottom:8px}
+.cg-head h3{font:900 1.05rem var(--font-display);text-transform:uppercase}
+.cg-head p{color:var(--muted);font-size:.9rem}
+.crow{display:grid;grid-template-columns:minmax(0,250px) minmax(0,1fr) auto;gap:6px 18px;align-items:center;padding:13px 14px;border-radius:12px}
+.crow+.crow{border-top:1px solid var(--line)}
+.crow:hover{background:rgba(255,255,255,.03)}
+.cmd{font:500 .9rem var(--font-mono);background:none;padding:0;color:#fff}
+.arg{color:var(--violet-3)}
+.cdesc{color:var(--soft);font-size:.94rem;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.tag{font:800 .6rem var(--font-display);letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;border:1px solid;white-space:nowrap}
+.tag.esp{color:#E4CBFF;background:rgba(155,61,242,.25);border-color:rgba(199,149,251,.6)}
+.tag.alvo{color:#FFC98F;background:rgba(255,154,61,.14);border-color:rgba(255,154,61,.45)}
+.tag.combate{color:#FF9AA5;background:rgba(242,73,91,.14);border-color:rgba(242,73,91,.45)}
+.empty{padding:28px;border:1px dashed var(--line-2);border-radius:14px;color:var(--muted)}
+.cnt{margin-left:auto;font:700 .66rem var(--font-mono);color:#E0C8FF;background:rgba(0,0,0,.28);border-radius:6px;padding:3px 7px;text-shadow:none}
+
+/* Ajuda */
+.faq{display:grid;gap:10px}
+.faq details{background:var(--raise);border:1px solid var(--line);border-radius:14px}
+.faq details[open]{border-color:rgba(199,149,251,.45)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font:700 1rem/1.35 var(--font-display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font:700 1.1rem var(--font-mono);background:rgba(155,61,242,.22);color:var(--violet-3)}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{padding:0 56px 20px 20px;color:var(--soft);max-width:70ch}
+.contact{border-radius:18px;padding:22px 24px;background:linear-gradient(135deg,rgba(155,61,242,.28),rgba(155,61,242,.08));border:1px solid rgba(199,149,251,.35)}
+.contact b{display:block;font:900 1rem var(--font-display);text-transform:uppercase;margin-bottom:4px}
+.contact span{color:var(--soft)}
+.foot{margin-top:72px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 24px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);z-index:60;max-width:min(92vw,460px);background:#25202F;border:1px solid var(--violet);color:#fff;padding:13px 18px;border-radius:12px;font:600 .9rem/1.4 var(--font-body);box-shadow:0 20px 50px -10px #000,0 0 0 4px rgba(155,61,242,.2);opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+@media (max-width:1100px){
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gp-types{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:1000px){
+  .shell{grid-template-columns:minmax(0,1fr);gap:0;padding-block:24px 32px}
+  .side{display:none}
+  .topbar{display:block}
+  html{scroll-padding-top:110px}
+  .sec{margin-top:56px;scroll-margin-top:110px}
+  .hero{grid-template-columns:minmax(0,1fr)}
+  .hero-fig{order:-1;aspect-ratio:4/3}
+  .quick{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .statement{grid-template-columns:minmax(0,1fr)}
+  .pillars,.dd,.how{grid-template-columns:minmax(0,1fr)}
+  .pane{grid-template-columns:minmax(0,1fr)}
+  .pane-nav{flex-direction:row;overflow-x:auto;padding:12px;scrollbar-width:none}
+  .pane-nav::-webkit-scrollbar{display:none}
+  .pane-nav .navbtn{flex:none;width:auto;padding:10px 14px}
+  .pane-nav .navbtn::before{display:none!important}
+  .gp-body{grid-template-columns:minmax(0,1fr)}
+  .gp-nav{padding-left:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+  .gp-nav .gp-cap,.gp-kbox,.gp-user{grid-column:1/-1}
+  .gp-tab[aria-selected="true"]::before{display:none}
+  .gp-main{min-height:0}
+  .crow{grid-template-columns:minmax(0,1fr) auto}
+  .crow .cdesc{grid-column:1/-1;grid-row:2}
+}
+@media (max-width:560px){
+  .quick{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .gp-types{grid-template-columns:minmax(0,1fr)}
+  .gp-ban{grid-template-columns:auto minmax(0,1fr)}
+  .gp-ban .mini,.gp-ban .gp-btn{grid-column:1/-1}
+  .gp-row{flex-direction:column}
+  .win-head{padding:18px 16px}
+  .win-ico{width:40px;height:40px}
+  .faq details p{padding-right:20px}
+}
+@media (prefers-reduced-motion:reduce){.q,.toast,.btn,.navbtn{transition:none}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="hammer" viewBox="0 0 64 64"><g transform="rotate(40 32 32)" fill="currentColor"><rect x="12" y="8" width="40" height="18" rx="5"/><rect x="28" y="24" width="8" height="36" rx="3"/></g></symbol>
+  <symbol id="user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></g></symbol>
+</svg>
+
+<div class="topbar">
+  <div class="topbar-in gut">
+    <a class="brand" href="#inicio"><span class="mark"><svg><use href="#hammer"/></svg></span><span><b>Factual RJ</b><small>Manual da Staff</small></span></a>
+    <nav class="chips" aria-label="Seções">
+      <a class="navbtn" href="#inicio">Início</a><a class="navbtn" href="#modo-discreto">Modo discreto</a><a class="navbtn" href="#fundamentos">Fundamentos</a><a class="navbtn" href="#regulamento">Regulamento</a><a class="navbtn" href="#painelban">Painel</a><a class="navbtn" href="#comandos">Comandos</a><a class="navbtn" href="#ajuda">Ajuda</a>
+    </nav>
+  </div>
+</div>
+
+<div class="shell gut">
+  <aside class="side">
+    <a class="brand" href="#inicio"><span class="mark"><svg><use href="#hammer"/></svg></span><span><b>Factual RJ</b><small>Manual da Staff</small></span></a>
+    <nav class="navpanel" aria-label="Seções">
+      <span class="cap">Navegação</span>
+      <a class="navbtn" href="#inicio">Início</a>
+      <a class="navbtn" href="#modo-discreto">Modo discreto</a>
+      <a class="navbtn" href="#fundamentos">Fundamentos</a>
+      <a class="navbtn" href="#regulamento">Regulamento</a>
+      <a class="navbtn" href="#painelban">Painel</a>
+      <a class="navbtn" href="#comandos">Comandos</a>
+      <a class="navbtn" href="#ajuda">Ajuda</a>
+    </nav>
+    <div class="kbox"><span class="cap">Atalhos</span><pre>TECLA K abre/fecha o painel
+/painelban
+:cmdbox</pre></div>
+    <p class="lock">Material interno da Staff. Não divulgue sem autorização da coordenação.</p>
+  </aside>
+
+  <main>
+    <!-- INÍCIO -->
+    <section class="sec" id="inicio">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="pill">Staff <i style="font-style:normal;opacity:.6">•</i> Factual RJ</span>
+          <h1>Manual<span>da Staff</span></h1>
+          <p class="lead">Ser staff é um privilégio, não um direito. Regras, comandos e orientações para administrar o Factual RJ com responsabilidade, imparcialidade e profissionalismo.</p>
+          <div class="actions">
+            <a class="btn pri" href="#regulamento">Ler regulamento</a>
+            <a class="btn" href="#painelban">Ver o painel</a>
+          </div>
+        </div>
+        <figure class="hero-fig"><img src="thumb.jpg" width="1000" height="967" alt="Arte do Factual RJ: personagem de moto sob o céu do Rio, com a logo do jogo ao fundo"></figure>
+      </div>
+      <div class="quick">
+        <a class="q" href="#modo-discreto"><span class="cap">Jogue como player</span><span>Sem modo admin quando você não está telando alguém.</span></a>
+        <a class="q" href="#modo-discreto"><span class="cap">Discrição</span><span>Evite o team Staff. Hacker se solta quando acha que não tem admin.</span></a>
+        <a class="q" href="#comandos"><span class="cap">Tele com :track</span><span>O ESP acompanha o jogador sem você ficar invisível ou voando.</span></a>
+        <a class="q" href="#regulamento"><span class="cap">Sem vantagem em combate</span><span>:god, :fly, :speed e :invisible nunca em tiroteio, perseguição ou confronto.</span></a>
+        <a class="q" href="#painelban"><span class="cap">Painel</span><span>Tecla K ou /painelban abre o painel de punições.</span></a>
+        <a class="q" href="#regulamento"><span class="cap">Meta semanal</span><span>Mínimo de 5 horas de gameplay por semana.</span></a>
+      </div>
+    </section>
+
+    <!-- MODO DISCRETO -->
+    <section class="sec" id="modo-discreto">
+      <div class="win">
+        <div class="win-head">
+          <span class="win-ico"><svg><use href="#hammer"/></svg></span>
+          <div><h2>Modo discreto</h2><div class="cap">Staff<i>•</i>Factual RJ<i>•</i>Jogue como um player</div></div>
+        </div>
+        <div class="win-body">
+          <div class="statement">
+            <div>
+              <h3>Hacker só se solta quando acha que não tem ninguém olhando.</h3>
+              <p>Por isso a equipe joga como qualquer jogador. Quando ninguém sabe que há admin online, quem usa cheat age sem medo, e fica bem mais fácil pegar com prova.</p>
+            </div>
+            <div class="esp">
+              <span class="cap">Ferramenta preferida</span>
+              <code>:track [jogador]</code>
+              <p>Funciona como um ESP: acompanha a posição do jogador em tempo real, sem invisível, sem voo e sem god.</p>
+              <button class="mini" type="button" data-copy=":track ">Copiar</button>
+            </div>
+          </div>
+          <div class="pillars">
+            <div class="pillar"><span class="cap">Como jogar</span><h4>Como um player qualquer</h4><p>Entre como bandido ou policial e jogue normalmente. Nada de invisível, god, fly ou speed sem necessidade.</p></div>
+            <div class="pillar"><span class="cap">Quando usar o modo admin</span><h4>Só com alvo definido</h4><p>Ligue recursos administrativos apenas para telar um jogador específico. Terminou? Desligue e volte ao normal.</p></div>
+            <div class="pillar"><span class="cap">Onde ficar</span><h4>Fora do team Staff</h4><p>Dê prioridade a não entrar no team de staff dentro do jogo. Ele mostra que a equipe está online.</p></div>
+          </div>
+          <div class="dd">
+            <div class="inset"><h4>Faça</h4>
+              <ul>
+                <li>Jogue normalmente como bandido ou policial.</li>
+                <li>Use <code>:track</code> para acompanhar suspeitos.</li>
+                <li>Peça uma telagem pela aba Telagem do painel.</li>
+                <li>Reúna provas antes de agir.</li>
+                <li>Volte ao modo normal assim que terminar.</li>
+              </ul>
+            </div>
+            <div class="inset no"><h4>Evite</h4>
+              <ul>
+                <li>Ficar invisível ou voando sem um alvo para telar.</li>
+                <li>Usar <code>:god</code>, <code>:fly</code> ou <code>:speed</code> em combate.</li>
+                <li>Entrar no team Staff sem necessidade.</li>
+                <li>Deixar claro no chat que há staff online.</li>
+                <li>Usar recursos de admin em proveito próprio.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="note">Esta diretriz reforça as regras 3.2 (Fiscalização de Jogadores Suspeitos) e 3.3 (Gameplay Normal) do regulamento.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNDAMENTOS -->
+    <section class="sec" id="fundamentos">
+      <div class="win">
+        <div class="win-head">
+          <span class="win-ico"><svg><use href="#hammer"/></svg></span>
+          <div><h2>Fundamentos</h2><div class="cap">Staff<i>•</i>Factual RJ<i>•</i>O básico de quem administra</div></div>
+        </div>
+        <div class="win-body">
+          <div class="inset">
+            <h3>O papel da staff</h3>
+            <div class="fit">
+              <div class="raise role"><h4>Seja exemplo</h4><p>Mantenha postura profissional mesmo diante de provocações. Desrespeitar, provocar, perseguir ou praticar bullying é proibido.</p></div>
+              <div class="raise role"><h4>Trate todos igual</h4><p>Policiais e bandidos recebem a mesma atenção. Amigos e conhecidos não ganham tratamento especial.</p></div>
+              <div class="raise role"><h4>Guarde o que é interno</h4><p>Conversas da Staff, denúncias confidenciais e procedimentos administrativos não saem da equipe sem autorização.</p></div>
+              <div class="raise role"><h4>Aborde com motivo</h4><p>Toda abordagem precisa de justificativa legítima, ligada ao cumprimento das regras.</p></div>
+            </div>
+          </div>
+          <div class="inset">
+            <h3>Como atender uma ocorrência</h3>
+            <ol class="steps">
+              <li><b>Entenda</b><span>Leia a denúncia ou observe o jogador.</span></li>
+              <li><b>Tele com discrição</b><span>Use <code>:track</code> ou a aba Telagem do painel.</span></li>
+              <li><b>Reúna provas</b><span>Vídeos, prints ou observação direta.</span></li>
+              <li><b>Aja pelo painel</b><span>Abra com a tecla K ou com <code>/painelban</code>.</span></li>
+              <li><b>Registre</b><span>Informe no canal indicado pela coordenação.</span></li>
+            </ol>
+            <p class="note">Não consegue resolver? Encaminhe a outro membro da Staff. Ignorar uma ocorrência de propósito é proibido.</p>
+          </div>
+          <div class="inset">
+            <h3>Glossário</h3>
+            <dl class="fit" style="margin:0">
+              <div class="raise term"><dt>Telar</dt><dd>Observar de perto um jogador suspeito de exploit, cheat ou infração, para reunir provas.</dd></div>
+              <div class="raise term"><dt>ESP</dt><dd>Recurso que mostra onde o jogador está. No servidor, é o <code>:track</code>.</dd></div>
+              <div class="raise term"><dt>Exploit e cheat</dt><dd>Falha do jogo ou programa usado para trapacear. Hackers e exploiters têm punição mais pesada.</dd></div>
+              <div class="raise term"><dt>Combat log</dt><dd>Sair do jogo durante uma situação de combate.</dd></div>
+              <div class="raise term"><dt>Modo administrativo</dt><dd>Estado em que o admin usa recursos como invisibilidade e voo. Só ao telar alguém.</dd></div>
+              <div class="raise term"><dt>Team Staff</dt><dd>Equipe de staff dentro do jogo. Entrar nela mostra aos jogadores que há admin online.</dd></div>
+              <div class="raise term"><dt>CmdBox</dt><dd>Caixa por onde todos os comandos administrativos são executados (<code>:cmdbox</code>).</dd></div>
+              <div class="raise term"><dt>Ocorrência</dt><dd>Situação reportada ou observada que exige atendimento da Staff.</dd></div>
+              <div class="raise term"><dt>Coordenação</dt><dd>Avalia a Staff, revisa decisões contestadas e indica o canal de registro.</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGULAMENTO -->
+    <section class="sec" id="regulamento">
+      <div class="win">
+        <div class="win-head">
+          <span class="win-ico"><svg><use href="#hammer"/></svg></span>
+          <div><h2>Regulamento geral</h2><div class="cap">Staff<i>•</i>Factual RJ<i>•</i>7 seções</div></div>
+        </div>
+        <div class="win-body">
+          <p class="lead">A Staff do Factual RJ é responsável por garantir que o ambiente seja justo, divertido e respeitoso para todos os jogadores. Todos os membros devem exercer suas funções com responsabilidade, imparcialidade e profissionalismo.</p>
+          <div class="pane">
+            <div class="pane-nav" id="reg-nav" role="tablist" aria-label="Seções do regulamento"></div>
+            <div class="pane-main" id="reg-main" role="tabpanel"></div>
+          </div>
+        </div>
+      </div>
+      <div class="final" style="margin-top:18px">
+        <h3>Disposição final</h3>
+        <p>Todos os membros da Staff do FACTUAL RJ deverão conhecer e cumprir este regulamento. O desconhecimento das regras não será considerado justificativa para o descumprimento.</p>
+        <p>O objetivo da administração é manter um ambiente justo, organizado e respeitoso para todos. O cargo deve ser utilizado para ajudar a comunidade, e nunca para obter privilégios pessoais.</p>
+      </div>
+    </section>
+
+    <!-- PAINEL -->
+    <section class="sec" id="painelban">
+      <div class="win">
+        <div class="win-head">
+          <span class="win-ico"><svg><use href="#hammer"/></svg></span>
+          <div><h2>Painel /painelban</h2><div class="cap">Staff<i>•</i>Factual RJ<i>•</i>Tecla K</div></div>
+        </div>
+        <div class="win-body">
+          <p class="lead">Kick, ban e desbanir ficam todos no painel de punições do jogo. Abra, escolha a aba e faça tudo por ali. A ilustração abaixo é clicável para você conhecer cada aba.</p>
+          <div class="how">
+            <div class="raise"><b>Abrir e fechar</b><span>Aperte <kbd>K</kbd> ou digite <code>/painelban</code>. A tecla K também fecha.</span></div>
+            <div class="raise"><b>Escolher a aba</b><span>Punir, Desbanir, Admins ou Telagem, no menu à esquerda.</span></div>
+            <div class="raise"><b>Alertas</b><span>O botão no topo liga e desliga os alertas do painel.</span></div>
+          </div>
+
+          <div>
+            <div class="game">
+              <div class="gp">
+                <div class="gp-head">
+                  <div class="gp-title">
+                    <svg viewBox="0 0 64 64"><use href="#hammer"/></svg>
+                    <div><h3>Painel de punições</h3><small>Staff • Factual RJ • Kick, Ban e Ban IP</small></div>
+                  </div>
+                  <div class="gp-actions">
+                    <button class="gp-btn on" type="button" id="gp-alerts">Alertas: ON</button>
+                    <button class="gp-btn" type="button" id="gp-close">Fechar</button>
+                  </div>
+                </div>
+                <div class="gp-body">
+                  <div class="gp-nav" role="tablist" aria-label="Abas do painel">
+                    <span class="gp-cap">Navegação</span>
+                    <button class="gp-tab" type="button" role="tab" data-tab="punir" aria-selected="true">Punir</button>
+                    <button class="gp-tab" type="button" role="tab" data-tab="desbanir" aria-selected="false">Desbanir</button>
+                    <button class="gp-tab" type="button" role="tab" data-tab="admins" aria-selected="false">Admins</button>
+                    <button class="gp-tab" type="button" role="tab" data-tab="telagem" aria-selected="false">Telagem</button>
+                    <div class="gp-kbox"><b>Comandos</b>TECLA K abre/fecha
+/ban /banip /kick
+/bantemp nick 1d motivo
+/painelban</div>
+                    <div class="gp-user"><span class="gp-av">SN</span><div><b>Seu_Nick</b><span class="gp-badge adm">Admin</span></div></div>
+                  </div>
+
+                  <div class="gp-main">
+                    <!-- Punir -->
+                    <div data-pane="punir" class="gp-pane" style="display:grid;gap:12px">
+                      <span class="gp-cap">Jogador <span>nick ou id</span></span>
+                      <input class="gp-input" id="gp-nick" type="text" placeholder="Digite o nick... (já mostra quem está no servidor)" autocomplete="off">
+                      <div class="gp-result"><span class="gp-av2"><svg><use href="#hammer"/></svg></span><div><b id="gp-res-t">Nenhum jogador</b><span id="gp-res-d">Digite o nick acima. Quem está fora do jogo também pode...</span></div></div>
+                      <span class="gp-cap">Tipo de punição</span>
+                      <div class="gp-types" role="radiogroup" aria-label="Tipo de punição">
+                        <button class="gp-type" type="button" role="radio" aria-checked="false" data-type="Kick" style="--tc:#F5A623"><i></i><b>Kick</b><span>Expulsa do servidor agora</span></button>
+                        <button class="gp-type" type="button" role="radio" aria-checked="true" data-type="Ban" style="--tc:#F2495B"><i></i><b>Ban</b><span>Bane a conta para sempre</span></button>
+                        <button class="gp-type" type="button" role="radio" aria-checked="false" data-type="Ban IP" style="--tc:#9B3DF2"><i></i><b>Ban IP</b><span>Bane a conta e as contas alt</span></button>
+                        <button class="gp-type" type="button" role="radio" aria-checked="false" data-type="Ban Temp" style="--tc:#FF7A3C"><i></i><b>Ban Temp</b><span>Bane por um tempo</span></button>
+                      </div>
+                      <span class="gp-cap">Motivo <span id="gp-count">0/200</span></span>
+                      <input class="gp-input" id="gp-reason" type="text" maxlength="200" placeholder="Explique o motivo da punição..." autocomplete="off">
+                      <div class="gp-chips" id="gp-chips"><button type="button">Hack</button><button type="button">Bug</button><button type="button">Ofensa</button><button type="button">RDM</button><button type="button">Flood</button><button type="button">Divulgação</button></div>
+                      <button class="gp-btn gp-apply" type="button" id="gp-apply">Aplicar ban</button>
+                    </div>
+
+                    <!-- Desbanir -->
+                    <div data-pane="desbanir" class="gp-pane" style="display:none;gap:12px">
+                      <span class="gp-cap">Pesquisar banido <span>nick ou id</span></span>
+                      <div class="gp-row"><input class="gp-input" id="gp-search" type="text" placeholder="Digite o nick do banido..." autocomplete="off"><button class="gp-btn" type="button" id="gp-find">Buscar</button></div>
+                      <span class="gp-cap">Banidos recentes <span id="gp-bcount">4 banidos</span></span>
+                      <div class="gp-list" id="gp-bans"></div>
+                      <p class="gp-empty" id="gp-bempty" hidden>Nenhum banido com esse nick.</p>
+                    </div>
+
+                    <!-- Admins -->
+                    <div data-pane="admins" class="gp-pane" style="display:none;gap:12px">
+                      <span class="gp-cap">Equipe <span>exemplo</span></span>
+                      <div class="gp-list">
+                        <div class="gp-ban"><span class="av">E1</span><div><b>Exemplo_Dono</b><span class="gp-badge">Dono</span></div></div>
+                        <div class="gp-ban"><span class="av">E2</span><div><b>Exemplo_Admin</b><span class="gp-badge adm">Admin</span></div></div>
+                        <div class="gp-ban"><span class="av">E3</span><div><b>Exemplo_Staff</b><span class="gp-badge adm">Admin</span></div></div>
+                      </div>
+                    </div>
+
+                    <!-- Telagem -->
+                    <div data-pane="telagem" class="gp-pane" style="display:none;gap:12px">
+                      <span class="gp-cap">Solicitar telagem <span>jogador no servidor</span></span>
+                      <input class="gp-input" id="gp-tnick" type="text" placeholder="Digite o nick de quem vai pra telagem..." autocomplete="off">
+                      <div class="gp-result"><span class="gp-av2"><svg><use href="#user"/></svg></span><div><b id="gp-tres">Nenhum jogador</b><span>Escolha alguém que está no servidor</span></div><button class="gp-btn" type="button" id="gp-treq" style="margin-left:auto">Solicitar</button></div>
+                      <span class="gp-cap">Telagens em andamento</span>
+                      <div class="gp-list" id="gp-tlist"></div>
+                      <p class="gp-empty" id="gp-tempty">Nenhuma telagem rolando agora.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p class="cap game-cap">Ilustração do painel com dados de exemplo. Nicks, datas e motivos são fictícios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMANDOS -->
+    <section class="sec" id="comandos">
+      <div class="win">
+        <div class="win-head">
+          <span class="win-ico"><svg><use href="#hammer"/></svg></span>
+          <div><h2>Comandos</h2><div class="cap">Staff<i>•</i>Factual RJ<i>•</i>Consulta rápida</div></div>
+        </div>
+        <div class="win-body">
+          <p class="lead">Busque pelo nome ou filtre por categoria e copie o comando para o <code>:cmdbox</code>. Para kick, ban e desbanir, use o painel <code>/painelban</code>.</p>
+          <div class="warnbar"><b>Atenção</b><span><code>:god</code>, <code>:fly</code>, <code>:speed</code> e <code>:invisible</code> não podem dar vantagem em combate. Fora de uma telagem, jogue sem modo admin.</span></div>
+          <div class="pane">
+            <div class="pane-nav" id="cmd-nav" role="group" aria-label="Categorias"></div>
+            <div class="pane-main">
+              <div class="search">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+                <input id="q" type="search" placeholder="Buscar comando, ex.: track, bring, speed" aria-label="Buscar comando" autocomplete="off">
+              </div>
+              <span class="cap" id="count" aria-live="polite"></span>
+              <div id="cmds"></div>
+              <div class="empty" id="empty" hidden>Nenhum comando encontrado. Tente outro termo ou escolha &ldquo;Todos&rdquo;.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AJUDA -->
+    <section class="sec" id="ajuda">
+      <div class="win">
+        <div class="win-head">
+          <span class="win-ico"><svg><use href="#hammer"/></svg></span>
+          <div><h2>Ajuda</h2><div class="cap">Staff<i>•</i>Factual RJ<i>•</i>Dúvidas comuns</div></div>
+        </div>
+        <div class="win-body">
+          <div class="faq">
+            <details open><summary>Posso jogar como bandido ou policial sendo admin?</summary><p>Pode, e é o esperado. Durante o serviço, jogue como qualquer outro jogador, sem ficar em modo administrativo.</p></details>
+            <details><summary>Quando posso usar invisível, fly ou god?</summary><p>Só ao telar um jogador específico, com finalidade administrativa legítima. Terminou a telagem, volte ao normal. Nunca use esses comandos para ganhar vantagem em tiroteios, perseguições ou confrontos.</p></details>
+            <details><summary>Por que evitar o team Staff?</summary><p>Porque ele mostra que há admin online. Quem usa cheat se solta quando acha que ninguém está olhando, e isso facilita pegar com prova.</p></details>
+            <details><summary>Como telar sem aparecer?</summary><p>Use o <code>:track [jogador]</code>, que funciona como um ESP, ou solicite uma telagem pela aba Telagem do painel.</p></details>
+            <details><summary>Onde abro o painel de punições?</summary><p>Aperte a tecla K ou digite <code>/painelban</code>. A mesma tecla fecha o painel.</p></details>
+            <details><summary>Um jogador contestou uma decisão minha. E agora?</summary><p>Encaminhe o caso à coordenação para revisão. Se a denúncia envolver você diretamente, outro membro da Staff deve analisar.</p></details>
+            <details><summary>Não consigo resolver uma ocorrência.</summary><p>Encaminhe a situação a outro membro da Staff. Ignorar ocorrências de propósito, para favorecer alguém ou fugir da responsabilidade, é proibido.</p></details>
+            <details><summary>Vou ficar ausente por um tempo.</summary><p>Avise a coordenação com antecedência, sempre que possível. Ausências justificadas são avaliadas individualmente.</p></details>
+            <details><summary>Posso emprestar minha conta ou permissões?</summary><p>Não. Emprestar contas administrativas ou compartilhar credenciais pode levar à demissão imediata. Cada membro é responsável pela segurança da própria conta.</p></details>
+            <details><summary>O que acontece se eu descumprir o regulamento?</summary><p>As consequências vão de advertência interna a suspensão temporária, rebaixamento e demissão, conforme a gravidade e as provas. Veja a seção 7 do regulamento.</p></details>
+          </div>
+          <div class="contact"><b>Ainda com dúvida?</b><span>Fale com a coordenação pelos canais da Staff no Discord. Bugs, suspeitas de exploit e problemas no servidor também devem ser comunicados lá.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot"><span>Regulamento Geral da Staff · Factual RJ</span><span>Material interno</span></div>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  function $(s,r){return (r||document).querySelector(s)}
+  function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))}
+  var toastT;
+  function toast(msg){var t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(function(){t.classList.remove('show')},2600)}
+
+  /* Regulamento */
+  function fmt(s){
+    return s.replace(/"(:[^"]+)"/g,'<code>$1</code>')
+            .replace(/\b(PODEM|PROIBIDO|DEVE|obrigatoriamente|proibido|proibida)\b/g,'<strong>$1</strong>');
+  }
+  var REG=[
+    {n:1,s:'Conduta',t:'Requisitos Básicos de Conduta',g:[
+      {t:'Jogue e Administre',i:[
+        `Os administradores PODEM participar normalmente das partidas como Bandido ou Policial.`,
+        `Durante o horário de serviço, o recomendado é jogar normalmente, como qualquer outro jogador, sem permanecer constantemente em modo administrativo.`,
+        `O modo administrativo deverá ser utilizado principalmente para fiscalizar jogadores suspeitos, atender ocorrências ou realizar procedimentos administrativos necessários.`,
+        `É PROIBIDO utilizar comandos administrativos para obter vantagens durante partidas, tiroteios ou perseguições.`]},
+      {t:'Exemplo e Postura',i:[
+        `Você DEVE ser um exemplo para os jogadores.`,
+        `É proibido desrespeitar, provocar, perseguir ou praticar bullying contra qualquer jogador.`,
+        `Mantenha uma postura profissional, mesmo diante de provocações.`]},
+      {t:'Imparcialidade',i:[
+        `É proibido favorecer qualquer equipe, facção, amigo ou conhecido.`,
+        `Todos os jogadores devem ser tratados igualmente, independentemente de sua equipe ou relação com membros da Staff.`,
+        `Infrações cometidas por policiais e bandidos devem receber a mesma atenção.`]},
+      {t:'Confidencialidade',i:[
+        `Informações internas da Staff, conversas privadas, denúncias confidenciais e procedimentos administrativos não devem ser divulgados sem autorização.`,
+        `É proibido utilizar informações internas para obter vantagens pessoais ou beneficiar terceiros.`]},
+      {t:'Proibição de Perseguição',i:[
+        `É proibido utilizar o cargo para perseguir jogadores, provocar conflitos ou procurar motivos para prejudicar alguém.`,
+        `Toda abordagem deverá ter uma justificativa legítima e estar relacionada ao cumprimento das regras.`]}
+    ]},
+    {n:2,s:'Punições',t:'Regras de Aplicação de Punições',g:[
+      {t:'Provas e Advertências',i:[
+        `Nenhum jogador deverá ser punido injustamente ou sem fundamento.`,
+        `Sempre que possível, reúna provas por meio de vídeos, prints ou observação direta.`,
+        `Quando a situação permitir, advirta verbalmente o jogador antes de aplicar uma punição.`,
+        `Utilize o comando ":warn [jogador] [motivo]" para registrar advertências, conforme os procedimentos da Staff.`]},
+      {t:'Punições Proporcionais',i:[
+        `Toda punição deverá ser proporcional à gravidade da infração.`,
+        {x:`A sequência recomendada é:`,ol:[
+          `Advertência verbal.`,
+          `Kick, para infrações leves ou situações que justifiquem a expulsão.`,
+          `Banimento temporário, para infrações graves ou reincidência.`,
+          `Banimento permanente, para infrações extremamente graves, hackers ou exploiters, conforme as regras do jogo.`]},
+        `Infrações graves poderão receber punições mais severas imediatamente, desde que existam provas suficientes e a medida esteja de acordo com as normas.`]},
+      {t:'Motivo Claro',i:[
+        `Toda punição deverá apresentar um motivo claro e específico.`,
+        `É proibido aplicar punições por vingança, discussões pessoais ou desentendimentos.`,
+        `Exemplo: ":kick [jogador] Combat Log — saiu durante uma situação de combate".`]},
+      {t:'Registro de Punições',i:[
+        `Punições relevantes deverão ser registradas no canal indicado pela coordenação.`,
+        `Sempre que necessário, informe o jogador punido, o motivo, as provas disponíveis e a medida aplicada.`,
+        `Punições graves deverão ser registradas obrigatoriamente.`]},
+      {t:'Revisão de Punições',i:[
+        `Caso um jogador conteste uma punição, a situação poderá ser encaminhada à coordenação para revisão.`,
+        `Quando a denúncia envolver diretamente o administrador responsável pela punição, outro membro deverá analisar o caso.`,
+        `É proibido alterar ou cancelar punições por amizade ou interesse pessoal.`]}
+    ]},
+    {n:3,s:'Comandos Adonis',t:'Protocolo de Uso de Comandos Adonis',g:[
+      {t:'Uso do CmdBox',i:[
+        `Todos os comandos administrativos deverão ser executados pelo ":cmdbox", conforme o procedimento estabelecido pela coordenação.`,
+        `É proibido utilizar comandos administrativos para obter vantagens pessoais ou interferir indevidamente nas partidas.`]},
+      {t:'Fiscalização de Jogadores Suspeitos',i:[
+        `Comandos como ":invisible", ":fly me 20" e outros recursos de observação deverão ser utilizados principalmente para telar jogadores suspeitos de utilizar exploits, cheats ou cometer infrações.`,
+        `O uso dessas ferramentas deverá ter uma finalidade administrativa legítima, e não poderá ser utilizado para benefício próprio.`,
+        `Sempre que possível, reúna provas antes de aplicar qualquer punição.`]},
+      {t:'Gameplay Normal',i:[
+        `Quando não houver jogadores suspeitos para telar, ocorrências para atender ou outras necessidades administrativas, o recomendado é permanecer jogando normalmente, como qualquer outro player.`,
+        `Os administradores não devem permanecer constantemente invisíveis, voando ou utilizando outros recursos administrativos sem necessidade.`,
+        `O uso de comandos de fiscalização não deve se tornar uma vantagem durante tiroteios, perseguições ou confrontos.`]},
+      {t:'Proibição de Abuso de Comandos',i:[
+        `É expressamente proibido utilizar ":god", ":fly", ":speed", ":invisible" ou qualquer outro comando para obter vantagem em combate.`,
+        `Também é proibido utilizar comandos para prejudicar jogadores sem justificativa, escapar de situações desfavoráveis ou interferir em confrontos dos quais o administrador esteja participando.`,
+        `O descumprimento desta regra poderá resultar em suspensão ou demissão, dependendo da gravidade.`]},
+      {t:'Responsabilidade pelo Uso',i:[
+        `Cada administrador é responsável pelos comandos que utiliza.`,
+        `A coordenação poderá solicitar esclarecimentos sobre o uso de ferramentas administrativas quando houver suspeita de abuso.`]}
+    ]},
+    {n:4,s:'Atividade',t:'Atividade e Compromisso da Staff',g:[
+      {t:'Meta Mínima de Gameplay',i:[
+        `Todos os administradores deverão cumprir, no mínimo, 5 horas de gameplay por semana.`,
+        `A atividade poderá ser acompanhada pela coordenação por meio dos registros disponíveis.`,
+        `O cumprimento da meta não isenta o administrador de suas demais responsabilidades.`]},
+      {t:'Comunicação de Ausências',i:[
+        `Caso precise ficar ausente por um período prolongado, o administrador deverá comunicar a coordenação com antecedência, sempre que possível.`,
+        `Ausências justificadas poderão ser avaliadas individualmente.`]},
+      {t:'Atendimento e Disponibilidade',i:[
+        `Os administradores deverão colaborar no atendimento de denúncias e ocorrências sempre que estiverem disponíveis.`,
+        `Caso não possam resolver uma situação, deverão encaminhá-la a outro membro da Staff.`,
+        `É proibido ignorar deliberadamente ocorrências para favorecer alguém ou evitar responsabilidades.`]},
+      {t:'Relatórios e Comunicação Interna',i:[
+        `Os membros deverão registrar ocorrências importantes e comunicar bugs, suspeitas de exploits e problemas que prejudiquem o servidor.`,
+        `Informações relevantes deverão ser encaminhadas aos canais apropriados do Discord.`]}
+    ]},
+    {n:5,s:'Hierarquia',t:'Hierarquia e Responsabilidade Administrativa',g:[
+      {t:'Respeito à Hierarquia',i:[
+        `Todos os membros deverão respeitar a organização e as orientações legítimas da coordenação.`,
+        `É proibido interferir deliberadamente no trabalho de outro administrador ou desautorizar um membro publicamente para criar conflitos.`,
+        `Divergências deverão ser resolvidas internamente, sem impedir denúncias legítimas de abuso ou irregularidades.`]},
+      {t:'Proibição de Compartilhar Permissões',i:[
+        `É proibido emprestar contas administrativas, compartilhar credenciais ou permitir que terceiros utilizem comandos e permissões do cargo.`,
+        `Cada membro é responsável pela segurança de sua conta.`]},
+      {t:'Responsabilidade Individual',i:[
+        `Nenhum administrador estará acima das regras.`,
+        `Cargos elevados não concedem imunidade contra punições administrativas.`,
+        `Todos os membros poderão ser avaliados pela coordenação quando houver suspeitas de irregularidades.`]}
+    ]},
+    {n:6,s:'Avaliação',t:'Avaliação de Desempenho',g:[
+      {t:'Avaliação Periódica',i:[
+        `A coordenação poderá avaliar a atividade, a qualidade dos atendimentos, a imparcialidade, a postura e o cumprimento das regras de cada administrador.`,
+        `A avaliação não será baseada apenas na quantidade de punições aplicadas, mas também na qualidade do trabalho e na contribuição para o servidor.`]},
+      {t:'Reconhecimento e Melhoria',i:[
+        `Administradores que demonstrarem comprometimento, responsabilidade e bom desempenho poderão receber reconhecimento da coordenação.`,
+        `Membros com dificuldades poderão receber orientações para melhorar sua atuação.`]}
+    ]},
+    {n:7,s:'Penalidades',t:'Penalidades para a Staff',g:[
+      {t:'',i:[
+        `O descumprimento deste regulamento poderá resultar em:`,
+        {ol:[`Advertência interna.`,`Suspensão temporária das funções administrativas.`,`Rebaixamento de cargo.`,`Demissão da Staff.`]}],
+       p:[
+        `Infrações graves, como abuso de poder, favorecimento, perseguição, uso de comandos para obter vantagens em combate ou compartilhamento de permissões, poderão resultar em demissão imediata, conforme a gravidade e as provas disponíveis.`,
+        `A coordenação reserva-se o direito de analisar cada situação individualmente, garantindo que as medidas sejam aplicadas de forma justa e proporcional.`]}
+    ]}
+  ];
+  var regNav=$('#reg-nav'),regMain=$('#reg-main');
+  regNav.innerHTML=REG.map(function(s){return '<button class="navbtn l" type="button" role="tab" data-n="'+s.n+'" aria-selected="'+(s.n===1)+'"><b>'+s.n+'</b>'+s.s+'</button>'}).join('');
+  function showReg(n){
+    var s=REG.filter(function(x){return x.n===n})[0],h='';
+    h+='<div class="pane-title"><span class="cap">Seção '+s.n+' de '+REG.length+'</span><h3>'+s.t+'</h3></div><div class="rules">';
+    s.g.forEach(function(g,gi){
+      h+='<div class="rule">';
+      if(g.t)h+='<h4><span class="rid">'+s.n+'.'+(gi+1)+'</span>'+g.t+'</h4>';
+      h+='<ul>';
+      g.i.forEach(function(it){
+        if(typeof it==='string'){h+='<li>'+fmt(it)+'</li>';return}
+        h+='<li>'+(it.x?fmt(it.x):'')+'<ol>'+it.ol.map(function(o){return '<li>'+fmt(o)+'</li>'}).join('')+'</ol></li>';
+      });
+      h+='</ul>';
+      if(g.p)g.p.forEach(function(p){h+='<p>'+fmt(p)+'</p>'});
+      h+='</div>';
+    });
+    h+='</div>';
+    regMain.innerHTML=h;
+    $$('#reg-nav .navbtn').forEach(function(b){b.setAttribute('aria-selected',String(Number(b.getAttribute('data-n'))===n))});
+  }
+  regNav.addEventListener('click',function(e){var b=e.target.closest('.navbtn');if(b)showReg(Number(b.getAttribute('data-n')))});
+  showReg(1);
+
+  /* Comandos */
+  var TAGS={esp:'ESP · discreto',alvo:'Só ao telar um alvo',combate:'Proibido em combate'};
+  var CG=[
+    {id:'acesso',t:'Acesso e atalhos',d:'Como abrir o painel e executar comandos.',i:[
+      {c:':cmdbox',cp:':cmdbox',d:'Caixa por onde todos os comandos administrativos devem ser executados.'},
+      {c:'/painelban',cp:'/painelban',d:'Abre o painel de punições do jogo.'},
+      {c:'Tecla K',cp:null,d:'Abre e fecha o painel de punições.'}]},
+    {id:'telagem',t:'Telagem',d:'Acompanhar suspeitos com discrição.',i:[
+      {c:':track [jogador]',cp:':track ',d:'ESP: acompanha a posição do jogador em tempo real no mapa, sem invisível nem voo. É a ferramenta preferida para telar.',tags:['esp']},
+      {c:':invisible',cp:':invisible',d:'Deixa você invisível. Use apenas ao telar um jogador específico.',tags:['alvo','combate']},
+      {c:':fly me 20',cp:':fly me 20',d:'Voo livre em você mesmo. Use apenas ao telar um jogador específico.',tags:['alvo','combate']}]},
+    {id:'controle',t:'Controle de jogadores',d:'Gerenciar a experiência dos jogadores.',i:[
+      {c:':respawn [jogador]',cp:':respawn ',d:'Reinicia o personagem em seu ponto de origem.'},
+      {c:':kill [jogador]',cp:':kill ',d:'Causa a morte instantânea do personagem.'},
+      {c:':freeze [jogador]',cp:':freeze ',d:'Paralisa completamente os movimentos.'},
+      {c:':thaw [jogador]',cp:':thaw ',d:'Restaura a mobilidade do jogador.'}]},
+    {id:'teleporte',t:'Teletransporte',d:'Movimentação e posicionamento no mapa.',i:[
+      {c:':bring [jogador]',cp:':bring ',d:'Teleporta o jogador até a sua posição atual.'},
+      {c:':to [jogador]',cp:':to ',d:'Transporta você até a localização do jogador.'},
+      {c:':tp [jogador1] [jogador2]',cp:':tp ',d:'Conecta dois jogadores no mesmo local.'}]},
+    {id:'gameplay',t:'Ajustes de gameplay',d:'Personalização da experiência dos jogadores.',i:[
+      {c:':speed [jogador] [valor]',cp:':speed ',d:'Modifica a velocidade de movimento.',tags:['combate']},
+      {c:':jump [jogador] [valor]',cp:':jump ',d:'Ajusta a altura dos pulos.'},
+      {c:':fly [jogador]',cp:':fly ',d:'Ativa o modo de voo livre.',tags:['combate']},
+      {c:':unfly [jogador]',cp:':unfly ',d:'Desativa a habilidade de voar.'},
+      {c:':god',cp:':god',d:'Deixa o personagem invulnerável.',tags:['combate']}]},
+    {id:'alvos',t:'Alvos especiais',d:'Para ações em grupo, no lugar do nome do jogador.',i:[
+      {c:'me',cp:'me',d:'Aplica o efeito em você mesmo.'},
+      {c:'all',cp:'all',d:'Afeta todos os jogadores no servidor.'},
+      {c:'others',cp:'others',d:'Direciona a todos, exceto você.'},
+      {c:'random',cp:'random',d:'Seleciona automaticamente um jogador aleatório.'}]}
+  ];
+  function cmdFmt(c){return c.replace(/\[[^\]]+\]/g,function(m){return '<span class="arg">'+m+'</span>'})}
+  var total=CG.reduce(function(a,g){return a+g.i.length},0);
+  var h='';
+  CG.forEach(function(g){
+    h+='<div class="cgroup" data-g="'+g.id+'"><div class="cg-head"><h3>'+g.t+'</h3><p>'+g.d+'</p></div><div>';
+    g.i.forEach(function(c){
+      var s=(c.c+' '+c.d+' '+g.t).toLowerCase();
+      var tags=(c.tags||[]).map(function(t){return ' <span class="tag '+t+'">'+TAGS[t]+'</span>'}).join('');
+      h+='<div class="crow" data-s="'+s.replace(/"/g,'')+'"><code class="cmd">'+cmdFmt(c.c)+'</code><span class="cdesc">'+c.d+tags+'</span>'+(c.cp!==null?'<button class="mini" type="button" data-copy="'+c.cp+'">Copiar</button>':'<span></span>')+'</div>';
+    });
+    h+='</div></div>';
+  });
+  $('#cmds').innerHTML=h;
+  var nav='<button class="navbtn l" type="button" data-g="all" aria-selected="true">Todos<span class="cnt">'+total+'</span></button>';
+  CG.forEach(function(g){nav+='<button class="navbtn l" type="button" data-g="'+g.id+'" aria-selected="false">'+g.t+'<span class="cnt">'+g.i.length+'</span></button>'});
+  $('#cmd-nav').innerHTML=nav;
+  var st={q:'',g:'all'};
+  function applyCmds(){
+    var q=st.q.trim().toLowerCase().replace(/^[:\/]/,''),n=0;
+    $$('.cgroup').forEach(function(grp){
+      var show=0;
+      $$('.crow',grp).forEach(function(r){
+        var ok=(st.g==='all'||grp.getAttribute('data-g')===st.g)&&(!q||r.getAttribute('data-s').indexOf(q)>-1);
+        r.hidden=!ok;if(ok)show++;
+      });
+      grp.hidden=show===0;n+=show;
+    });
+    $('#empty').hidden=n>0;
+    $('#count').textContent=n+(n===1?' comando':' comandos');
+  }
+  $('#q').addEventListener('input',function(e){st.q=e.target.value;applyCmds()});
+  $('#cmd-nav').addEventListener('click',function(e){
+    var b=e.target.closest('.navbtn');if(!b)return;
+    st.g=b.getAttribute('data-g');
+    $$('#cmd-nav .navbtn').forEach(function(x){x.setAttribute('aria-selected',String(x===b))});
+    applyCmds();
+  });
+  applyCmds();
+
+  /* Copiar */
+  function flash(btn,txt,ok){
+    var old=btn.getAttribute('data-label')||btn.textContent;btn.setAttribute('data-label',old);
+    btn.textContent=txt;if(ok)btn.classList.add('ok');
+    setTimeout(function(){btn.textContent=old;btn.classList.remove('ok')},1500);
+  }
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('[data-copy]');if(!btn)return;
+    var text=btn.getAttribute('data-copy'),node=btn.closest('.crow')?btn.closest('.crow').querySelector('code'):btn.parentNode.querySelector('code');
+    function fallback(){
+      try{var r=document.createRange();r.selectNodeContents(node);var s=window.getSelection();s.removeAllRanges();s.addRange(r);flash(btn,'Selecionado',false)}catch(err){}
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(function(){flash(btn,'Copiado',true)},fallback)}
+    else fallback();
+  });
+
+  /* Painel (ilustração) */
+  $$('.gp-tab').forEach(function(t){t.addEventListener('click',function(){
+    var id=t.getAttribute('data-tab');
+    $$('.gp-tab').forEach(function(x){x.setAttribute('aria-selected',String(x===t))});
+    $$('.gp-pane').forEach(function(p){p.style.display=p.getAttribute('data-pane')===id?'grid':'none'});
+  })});
+  var curType='Ban';
+  $$('.gp-type').forEach(function(b){b.addEventListener('click',function(){
+    curType=b.getAttribute('data-type');
+    $$('.gp-type').forEach(function(x){x.setAttribute('aria-checked',String(x===b))});
+    $('#gp-apply').textContent='Aplicar '+curType.toLowerCase();
+  })});
+  $('#gp-nick').addEventListener('input',function(e){
+    var v=e.target.value.trim();
+    $('#gp-res-t').textContent=v||'Nenhum jogador';
+    $('#gp-res-d').textContent=v?'Jogador de exemplo':'Digite o nick acima. Quem está fora do jogo também pode...';
+  });
+  var reason=$('#gp-reason');
+  function count(){$('#gp-count').textContent=reason.value.length+'/200'}
+  reason.addEventListener('input',count);
+  $('#gp-chips').addEventListener('click',function(e){
+    var b=e.target.closest('button');if(!b)return;
+    var t=b.textContent;
+    reason.value=reason.value?(reason.value+', '+t).slice(0,200):t;count();
+  });
+  $('#gp-apply').addEventListener('click',function(){toast('Ilustração: nada foi aplicado. No jogo, use a tecla K ou /painelban.')});
+  $('#gp-close').addEventListener('click',function(){toast('Ilustração: no jogo este botão fecha o painel. A tecla K também fecha.')});
+  var al=$('#gp-alerts'),alOn=true;
+  al.addEventListener('click',function(){alOn=!alOn;al.textContent='Alertas: '+(alOn?'ON':'OFF');al.classList.toggle('on',alOn);al.classList.toggle('off',!alOn)});
+
+  var BANS=[
+    {n:'Exemplo_Hacker01',t:'Ban IP',c:'#9B3DF2',by:'Admin_Teste',d:'12/10/2026 20:15',w:'Uso de hack / exploit'},
+    {n:'Player_Teste02',t:'Ban IP',c:'#9B3DF2',by:'Admin_Teste',d:'11/10/2026 18:40',w:'cheat'},
+    {n:'Fulano_Exemplo03',t:'Ban',c:'#F2495B',by:'Admin_Demo',d:'10/10/2026 09:05',w:'Divulgação'},
+    {n:'Nick_Ficticio04',t:'Ban Temp',c:'#FF7A3C',by:'Admin_Demo',d:'09/10/2026 22:30',w:'Flood no chat'}
+  ];
+  function renderBans(){
+    var q=$('#gp-search').value.trim().toLowerCase();
+    var list=BANS.filter(function(b){return !q||b.n.toLowerCase().indexOf(q)>-1});
+    $('#gp-bans').innerHTML=list.map(function(b){
+      return '<div class="gp-ban"><span class="av">'+b.n.charAt(0)+'</span><div><b>'+b.n+'</b><div class="gp-meta"><span class="gp-pill" style="--tc:'+b.c+'">'+b.t+'</span><span>por '+b.by+' · '+b.d+'</span></div><span class="gp-why">"'+b.w+'"</span></div><button class="gp-btn" type="button" data-unban>Desbanir</button></div>';
+    }).join('');
+    $('#gp-bempty').hidden=list.length>0;
+    $('#gp-bcount').textContent=list.length+(list.length===1?' banido':' banidos');
+  }
+  $('#gp-search').addEventListener('input',renderBans);
+  $('#gp-find').addEventListener('click',renderBans);
+  $('#gp-bans').addEventListener('click',function(e){if(e.target.closest('[data-unban]'))toast('Ilustração: no jogo, este botão desbane o jogador.')});
+  renderBans();
+
+  $('#gp-tnick').addEventListener('input',function(e){$('#gp-tres').textContent=e.target.value.trim()||'Nenhum jogador'});
+  $('#gp-treq').addEventListener('click',function(){
+    var v=$('#gp-tnick').value.trim();
+    if(!v){toast('Digite o nick de um jogador para solicitar a telagem.');return}
+    var row=document.createElement('div');row.className='gp-ban';
+    row.innerHTML='<span class="av">'+v.charAt(0).toUpperCase()+'</span><div><b></b><div class="gp-meta"><span class="gp-pill" style="--tc:#3DDC84">Em andamento</span><span>acabou de começar</span></div></div><button class="gp-btn" type="button" data-end>Encerrar</button>';
+    row.querySelector('b').textContent=v;
+    $('#gp-tlist').appendChild(row);
+    $('#gp-tempty').hidden=true;$('#gp-tnick').value='';$('#gp-tres').textContent='Nenhum jogador';
+  });
+  $('#gp-tlist').addEventListener('click',function(e){
+    var b=e.target.closest('[data-end]');if(!b)return;
+    b.closest('.gp-ban').remove();
+    if(!$('#gp-tlist').children.length)$('#gp-tempty').hidden=false;
+  });
+
+  /* Navegação ativa */
+  var ids=['inicio','modo-discreto','fundamentos','regulamento','painelban','comandos','ajuda'];
+  var links=$$('.navpanel a, .chips a');
+  function setActive(id){
+    links.forEach(function(a){a.setAttribute('aria-current',a.getAttribute('href')==='#'+id?'true':'false')});
+    var c=$('.chips a[aria-current="true"]');
+    if(c&&window.innerWidth<=1000){var box=c.parentNode;box.scrollLeft=c.offsetLeft-box.clientWidth/2+c.offsetWidth/2}
+  }
+  setActive('inicio');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting)setActive(en.target.id)});
+    },{rootMargin:'-25% 0px -65% 0px'});
+    ids.forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+  }
+})();
+</script>
+
+</body></html>
